@@ -3,13 +3,13 @@ import { model, Schema } from 'mongoose';
 const BookSchema = new Schema({
     title: {
         type: String,
-        require: [true, 'Title is required!'],
+        required: [true, 'Title is required!'],
         max: [100, 'Max 100 characters you can enter for title!'],
         trim: true
     },
     author: {
         type: String,
-        require: [true, 'Author name is required!'],
+        required: [true, 'Author name is required!'],
         trim: true,
         max: [50, 'Max 50 characters you can enter for author!'],
     },
@@ -20,7 +20,7 @@ const BookSchema = new Schema({
     },
     createdAt: {
         type: Date,
-        default: new Date()
+        default: Date.now
     }
 }, {timestamps: true});
 
