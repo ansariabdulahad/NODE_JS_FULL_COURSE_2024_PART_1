@@ -1,7 +1,7 @@
 export const checkIsAdmin = async (req, res, next) => {
     try {
         if (req.userInfo && req.userInfo.role === "admin") {
-            next();
+            return next();
         }
         return res.status(403).json({
             success: false,

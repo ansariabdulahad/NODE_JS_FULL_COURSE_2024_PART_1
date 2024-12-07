@@ -1,7 +1,7 @@
 export const checkIsUser = async (req, res, next) => {
     try {
         if (req.userInfo && req.userInfo.role === "user") {
-            next();
+            return next();
         }
         return res.status(403).json({
             success: false,

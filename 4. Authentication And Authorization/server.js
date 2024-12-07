@@ -5,6 +5,7 @@ import { connectToDb } from "./database/db.js";
 import authRoutes from './routes/auth-route.js';
 import userRoutes from './routes/home-route.js';
 import adminRoutes from './routes/admin-route.js';
+import imageRoutes from './routes/image-route.js';
 
 config();
 connectToDb();
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/admin', adminRoutes);
+app.use('/api/image', imageRoutes);
 
 app.listen(process.env.PORT || 5000, (err) => {
     if (err) throw err;
